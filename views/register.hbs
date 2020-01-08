@@ -1,0 +1,25 @@
+<h1>{{title}}</h1>
+{{#if msg}}
+<div id="errorBox">
+    <p>{{msg}}</p>
+</div>
+{{/if}}
+<div id="formWrapper">
+        <div id="formBlock">
+            <label for="username"><span>Username:</span></label>
+            <input type="text" name="username" required>
+        </div>
+        <div id="formBlock">
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+        </div>
+        <div id="formBlock">
+            <label for="conf_password">Confirm password:</label>
+            <input type="password" name="conf_password" required>
+        </div>
+        <div id="formBlock">
+            <input type="submit" value="Register" required>
+        </div>
+    </form>
+
+</div>
