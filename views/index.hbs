@@ -1,7 +1,12 @@
+{{#if loggedIn}}
 {{#if msg}}
 <div id="errorBox">
     <p>{{msg}}</p>
 </div>
 {{/if}}
 <div>
+Welcome back {{username}}.
 </div>
+{{else}}
+You must be logged in to see this page.
+{{/if}}

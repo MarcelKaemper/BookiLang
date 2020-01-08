@@ -17,10 +17,10 @@ router.post('/', async(req, res, next) => {
 
   if(pw == req.body.conf_password) {
     if(await validatePassword(pw)){
-      let hashed_pw = await hash(pw);
-      let unames = await query(`SELECT username FROM login WHERE username="${username}"`);
+      let hashed_pw = await hash.hash(pw);
+      let unames = await query(`SELECT username FROM logins WHERE username="${username}"`);
       if(unames <= 0){
-        await query(`INSERT INTO login(username, password) VALUES ("${username}","${hashed_pw}");`);
+        await query(`INSERT INTO logins(username, password) VALUES ("${username}","${hashed_pw}");`);
         msg = "Registration successful! You may log in now";
       }else{
         msg = "Username is already taken";

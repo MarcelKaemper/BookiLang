@@ -15,12 +15,13 @@ router.post('/', async(req, res, next) => {
   let pw = req.body.password;
   let msg;
 
-  let pw_hash = await query(`SELECT password FROM login WHERE username="${username}"`);
+  let pw_hash = await query(`SELECT password FROM logins WHERE username="${username}"`);
 
   if(pw_hash.length > 0){
     if((await hash.compare(pw, pw_hash[0].password)) == true){
       msg = "Login successful!";
       req.session.loggedIn = true;
+      req.session.user = username;
     }else{
       msg = "Password incorrect";
     }
