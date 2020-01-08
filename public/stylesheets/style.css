@@ -21,3 +21,35 @@ label {
 #formBlock {
   margin: 5px;
 }
+
+#navbar, #content {
+  padding: 20px; 
+  text-align:center; 
+  width: 30%;
+  background-color: rgb(197, 196, 196); 
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+#navbar {
+  height: 30px;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#navbar a{
+  text-decoration: none;
+  color: black;
+  margin: 0 auto;
+  float: right;
+}
+
+#navbar div{
+  display: inline-block;
+  height: 100%;
+}
+
+#navbar div:hover {
+  background-color: grey;
+}

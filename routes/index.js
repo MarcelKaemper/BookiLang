@@ -2,12 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Vocab-Trainer' });
+  res.render('index', { title: 'Vocab-Trainer', loggedIn: req.session.loggedIn});
 });
 
 router.get('/logout', function(req, res, next) {
   req.session.destroy(()=>{
-    res.render('index', { title: 'Vocab-Trainer' });
+    res.redirect("login")
+    // res.render('index', { title: 'Vocab-Trainer', loggedIn: req.session.loggedIn });
   })
 });
 

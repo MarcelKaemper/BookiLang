@@ -27,8 +27,8 @@ router.post('/', async(req, res, next) => {
   }else{
     msg = "Username not found";
   }
-
-  res.render('login', {title: "Login", msg: `${msg}`, loggedIn: req.session.loggedIn});
+  // res.render('login', {title: "Login", msg: `${msg}`, loggedIn: req.session.loggedIn});
+  res.redirect("/");
 })
 
 module.exports = router;
