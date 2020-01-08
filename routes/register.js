@@ -6,7 +6,7 @@ const validatePassword = require('../public/javascripts/validatepw');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('register', { title: 'Express' });
+  res.render('register', { title: 'Register' });
 });
 
 router.post('/register', async(req, res, next) => {
