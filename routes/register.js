@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   res.render('register', { title: 'Register' });
 });
 
-router.post('/register', async(req, res, next) => {
+router.post('/', async(req, res, next) => {
 
   let pw = req.body.password;
   let username = req.body.username;
