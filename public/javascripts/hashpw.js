@@ -9,4 +9,19 @@ const hash = (pw) => {
     });
 }
 
-module.exports = hash;
+const compare = (pw, hash) => {
+    return new Promise((resolve, reject) => {
+        bcrypt.compare(pw, hash, (err, res) => {
+            if(!err){
+                resolve(res);
+            }else{
+                reject(err);
+            }
+        })
+    });
+}
+
+module.exports = {
+    hash,
+    compare
+};
