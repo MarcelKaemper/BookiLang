@@ -1,10 +1,12 @@
+{{#unless loggedIn}}
 {{#if msg}}
 <div id="errorBox">
     <p>{{msg}}</p>
 </div>
 {{/if}}
 <div id="formWrapper">
-    <form action="register" method="post">
+
+    <form action="login" method="post">
         <div id="formBlock">
             <label for="username"><span>Username:</span></label>
             <input type="text" name="username" required>
@@ -14,11 +16,11 @@
             <input type="password" name="password" required>
         </div>
         <div id="formBlock">
-            <label for="conf_password">Confirm password:</label>
-            <input type="password" name="conf_password" required>
-        </div>
-        <div id="formBlock">
-            <input type="submit" value="Register" required>
+            <input type="submit" value="Login" required>
         </div>
     </form>
+
 </div>
+{{else}}
+You're already logged in.
+{{/unless}}
